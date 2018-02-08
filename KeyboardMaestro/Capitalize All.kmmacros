@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>459267954.64927697</real>
+		<key>IsActive</key>
+		<true/>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>DisplayKind</key>
+						<string>None</string>
+						<key>IncludeStdErr</key>
+						<true/>
+						<key>IsActive</key>
+						<true/>
+						<key>IsDisclosed</key>
+						<true/>
+						<key>MacroActionType</key>
+						<string>ExecuteAppleScript</string>
+						<key>Path</key>
+						<string></string>
+						<key>Text</key>
+						<string>(*
+This script capitalizes the journal titles of the selected publications 
+in Bibdesk using smart capitalization. I.e., 'small' words 
+such as the, a, in, for, from, about, ..., are not capitalized, 
+unless at the beginning of a sentence, and capitalization is 
+supressed between matching braces {}.
+It is based on the "Capitalize Titles" script and uses the "Capitalize"
+and "Error Reporting" libraries, all of which were written by
+Christiaan Hofman
+(http://www.physics.rutgers.edu/~hofman/applescript/). 
+This script requires Bibdesk 0.97 or higher. 
+*)-- load the script library for capitalizationset capitalizeLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Capitalize.scpt"))-- load the Error Reporting script libraryset errorLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Error Reporting.scpt"))-- we only report all errors at the endtell errorLib	delayReportErrors()	set its defaultErrorFileName to "BibdeskScriptErrors"end telltell application "BibDesk"	activate		-- without document, there is no selection, so nothing to do	if (count of documents) = 0 then		beep		display dialog "No documents found." buttons {"•"} default button 1 giving up after 3	end if	set thePublications to the selection of document 1		tell capitalizeLib		-- protect chars between balanced {} 		set its startProtectChar to "{"		set its endProtectChar to "}"				repeat with thePub in thePublications			try				set theJournal to the value of field "Journal" of thePub				set theJournal to capitalize(theJournal)				set the value of field "Journal" of thePub to theJournal			on error errorMessage number errorNumber				tell errorLib to reportError(errorMessage, errorNumber)			end try		end repeat			end tell -- capitalizeLib		set selection of document 1 to thePublications	end tell -- Bibdesk-- see if we had any errorstell errorLib to checkForErrors()(*
+This script capitalizes the authors of the selected publications 
+in Bibdesk using smart capitalization. I.e., 'small' words 
+such as the, a, in, for, from, about, ..., are not capitalized, 
+unless at the beginning of a sentence, and capitalization is 
+suppressed between matching braces {}.
+It is based on the "Capitalize Titles" script and uses the
+"Capitalize" library, both of which were written by Christiaan
+Hofman
+(http://www.physics.rutgers.edu/~hofman/applescript/).
+This script requires Bibdesk 0.97 or higher. 
+*)-- load the script library for capitalizationset capitalizeLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Capitalize.scpt"))-- load the Error Reporting script libraryset errorLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Error Reporting.scpt"))-- we only report all errors at the endtell errorLib	delayReportErrors()	set its defaultErrorFileName to "BibdeskScriptErrors"end telltell application "BibDesk"	activate		-- without document, there is no selection, so nothing to do	if (count of documents) = 0 then		beep		display dialog "No documents found." buttons {"•"} default button 1 giving up after 3	end if	set thePublications to the selection of document 1		tell capitalizeLib		-- protect chars between balanced {} 		set its startProtectChar to "{"		set its endProtectChar to "}"				repeat with thePub in thePublications			try				set theAuthors to the value of field "Author" of thePub				set theAuthors to capitalize(theAuthors)				set the value of field "Author" of thePub to theAuthors			on error errorMessage number errorNumber				tell errorLib to reportError(errorMessage, errorNumber)			end try		end repeat			end tell -- capitalizeLib		set selection of document 1 to thePublications	end tell -- Bibdesk-- see if we had any errorstell errorLib to checkForErrors()(*
+This script capitalizes the titles of the selected publications 
+in BibDesk using smart capitalization. I.e., 'small' words 
+such as the, a, in, for, from, about, ..., are not capitalized, 
+unless at the beginning of a sentence, and capitalization is 
+supressed between matching braces {}. Before capitalization, 
+it protects the titles by adding apropriate braces, 
+and removes newlines from the titles. 
+This script requires BibDesk 0.97 or higher. 
+*)-- load the script library for capitalizationset capitalizeLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Capitalize.scpt"))-- load the script library for capitalizationset protectLib to (load script file ¬	((path to home folder as string) &amp; "Library:Application Support:BibDesk:Scripts:_OLD:Add Protect Strings.scpt"))-- load the Error Reporting script libraryset errorLib to (load script file ¬	((path to home folder as string) &amp; "Library:ScriptingAdditions:Error Reporting.scpt"))-- we only report all errors at the endtell errorLib	delayReportErrors()	set its defaultErrorFileName to "BibDeskScriptErrors"end telltell application "BibDesk"	activate		-- without document, there is no selection, so nothing to do	if (count of documents) = 0 then		beep		display dialog "No documents found." buttons {"•"} default button 1 giving up after 3	end if	set thePublications to the selection of document 1		-- protect chars between balanced {} 	set capitalizeLib's startProtectChar to "{"	set capitalizeLib's endProtectChar to "}"	set protectLib's startProtectChar to "{"	set protectLib's endProtectChar to "}"		repeat with thePub in thePublications		try			set theTitle to title of thePub			if theTitle contains return then ¬				set theTitle to my removeNewlines(theTitle)			set title of thePub to capitalizeLib's capitalize(protectLib's protectString(theTitle))		on error errorMessage number errorNumber			tell errorLib to reportError(errorMessage, errorNumber)		end try	end repeat		set selection of document 1 to thePublications	end tell -- BibDesk-- see if we had any errorstell errorLib to checkForErrors()-- we're done!tell application id "com.Growl.GrowlHelperApp"
+	-- Make a list of all the notification types
+	-- that this script will ever send:
+	set the allNotificationsList to ¬
+		{"BibdeskCapAll"}
+	
+	-- Make a list of the notifications
+	-- that will be enabled by default.
+	-- Those not enabled by default can be enabled later
+	-- in the 'Applications' tab of the Growl preferences.
+	set the enabledNotificationsList to ¬
+		{"BibdeskCapAll"}
+	
+	-- Register our script with growl.
+	-- You can optionally (as here) set a default icon
+	-- for this script's notifications.
+	register as application ¬
+		"Growl BibdeskCapAll" all notifications allNotificationsList ¬
+		default notifications enabledNotificationsList ¬
+		icon of application "Bibdesk"
+	
+	--       Send a Notification...
+	notify with name ¬
+		"BibdeskCapAll" title ¬
+		"BibdeskCapAll" description ¬
+		"All titles are capitalized." application name "Growl BibdeskCapAll"
+	
+end tellon removeNewlines(theString)	if theString contains return &amp; space then		set AppleScript's text item delimiters to return &amp; space		set parts to text items of theString		set AppleScript's text item delimiters to space		set theString to parts as string	end if	if theString contains return then		set AppleScript's text item delimiters to return		set parts to text items of theString		set AppleScript's text item delimiters to space		set theString to parts as string	end if	repeat while theString contains space &amp; space		set AppleScript's text item delimiters to space &amp; space		set parts to text items of theString		set AppleScript's text item delimiters to space		set theString to parts as string	end repeat	return theStringend removeNewlines</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>459267954.64927697</real>
+				<key>IsActive</key>
+				<true/>
+				<key>ModificationDate</key>
+				<real>467257570.31940502</real>
+				<key>Name</key>
+				<string>Capitalize All</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>8</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>6400</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>0C56DB27-5610-48BF-BF4F-711134C200F9</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Bibdesk</string>
+		<key>Targeting</key>
+		<dict>
+			<key>Targeting</key>
+			<string>Included</string>
+			<key>TargetingApps</key>
+			<array>
+				<dict>
+					<key>BundleIdentifier</key>
+					<string>edu.ucsd.cs.mmccrack.bibdesk</string>
+					<key>Name</key>
+					<string>BibDesk</string>
+					<key>NewFile</key>
+					<string>/Applications/TeX/BibDesk.app</string>
+				</dict>
+			</array>
+		</dict>
+		<key>ToggleMacroUID</key>
+		<string>48BF9325-8BB2-400C-B30E-77BAF2599499</string>
+		<key>UID</key>
+		<string>0F426B8E-72FE-4F1F-929F-9314495EF097</string>
+	</dict>
+</array>
+</plist>

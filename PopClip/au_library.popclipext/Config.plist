@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>au.png</string>
+			<key>Title</key>
+			<string>au_library</string>
+			<key>URL</key>
+			<string>http://search.ebscohost.com/login.aspx?search_prefix=&amp;bquery={popclip text}&amp;uquery={popclip text}&amp;direct=true&amp;scope=site&amp;site=eds-live&amp;profile=eds&amp;authtype=ip&amp;authtype=guest&amp;custid=s6844938&amp;groupid=main&amp;cli0=FT&amp;clv0=N&amp;cli1=RV&amp;clv1=N&amp;cli2=FC&amp;clv2=N&amp;cli3=FC1&amp;clv3=N</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>au_library</string>
+	<key>Extension Identifier</key>
+	<string>com.eremrah.popclip.extension.au_library</string>
+	<key>Extension Name</key>
+	<string>au_library</string>
+</dict>
+</plist>

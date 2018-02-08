@@ -1,0 +1,246 @@
+/* extensions-wrapper configurations */
+#footer .extensions-wrapper {
+    -webkit-app-region: no-drag;
+}
+#footer .extensions-wrapper img {
+    height: 12px;
+    width: 12px;
+}
+#footer .extensions-wrapper .button-badge {
+    max-height: 10px;
+    max-width: 10px;
+    min-width: 5px;
+}
+#footer .toggle-extensions-group svg {
+    vertical-align: middle;
+}
+#footer .extensions-wrapper .dragging-cancelled, #footer .toggle-extensions-group {
+    border-right: none;
+}
+
+/* background colors */
+#footer .extensions-wrapper .dragging-cancelled, #footer .toggle-extensions-group {
+    background-color: transparent;
+}
+#footer .extensions-wrapper span:hover, #footer .toggle-extensions-group:hover {
+    background-color: var(--colorBgDark);
+}
+
+/* popup */
+#footer .extensionaction .popup.top::before, #footer .extensionaction .popup.top::after {
+    display: none !important;
+}
+#footer .extensionaction {
+    position: absolute;
+    top: unset !important;
+    bottom: 35px;
+}
+
+/* footer button alignment */
+/*#footer button.button-toolbar-small {
+    height: 16px;
+}
+#footer input.button-toolbar-small:last-of-type {
+    margin-right: 6px;
+}
+#footer button.button-toolbar-small svg {
+    padding-top: 4px;
+}
+#footer .tilingtoggle {
+    padding-top: 1px;
+}*/
+
+
+#footer .zoom-control {
+    display: none !important;
+}
+
+#footer {
+    display: flex !important;
+    justify-content: flex-end !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    font-size: 10px !important;
+    font-family: PragmataPro !important;
+}
+
+#footer .button-toolbar-small {
+  display: none !important;
+}
+
+#footer .status-toolbar {
+    display: none !important;
+}
+
+#footer .status-toolbar {
+    display: none !important;
+}
+
+#footer #status_info > span {
+    font-size: 10px !important;
+    color: orange !important;
+    margin: auto 3px auto auto !important;
+    flex: 1 !important;
+    font-family: PragmataPro !important;
+    justify-content: right !important;
+    text-align: end !important;
+}
+
+#browser #main, #browser #footer {
+    background: black !important;
+}
+
+
+
+.mac #header {
+    min-height: 16px !important;
+}
+
+
+.mac #tabs-container.top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.tabs-top:not(.mac).color-behind-tabs-on #tabs-container,
+.tabs-top.mac.hasfocus.color-behind-tabs-on #tabs-container {
+  background-image: none !important;
+}
+
+#tabs-container {
+  height:16px !important;
+  background-color: #000000 !important;
+  color: #000000 !important;
+  fill: #000000 !important;
+  border: 0 solid #000000 !important;
+  z-index: 0;
+}
+
+.color-behind-tabs-on #tabs-container {
+  background-color: #000000 !important;
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+.tab {
+    background-color: #000000 !important;
+    color: #b3b3b3 !important;
+}
+
+.tab.active {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.tab-header {
+    margin-top: -6px !important;
+}
+
+.button-tabbar.newtab {
+    display: none !important;
+}
+
+
+#tabs-container .trash {
+    display: none !important;
+}
+
+#tabs-container.top {
+     padding-top: 0 !important;
+     border-color:  #000000 !important;
+}
+
+/*Tabs span top bar*/
+#tabs-container.top .tab-strip {
+    display: flex !important;
+    background-color: #000000 !important;
+}
+
+#tabs-container.top .tab-strip span {
+    flex: 1 1 0 !important;
+    display: flex !important;
+}
+
+#tabs-container.top .tab-position {
+    flex: 1 1 0 !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    height: 30px !important;
+}
+
+.tab-position .tab-header .title {
+    font-family: 'PragmataPro' !important;
+    font-size: 7pt !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+.tab-position .tab.active .tab-header .favicon {
+    background-color: transparent !important;
+}
+
+#tabs-container.top .tab-position .tab .favicon,
+#tabs-container.top .tab-position .tab .close {
+    flex: 0 0 10px !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    border-radius: 0 !important;
+    min-width: 10px !important;
+    height: 10px !important;
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: 10px !important;
+}
+
+
+
+
+
+#switch button:first-of-type {
+    display: none !important;
+}
+
+#switch button.webviewbtn img {
+    display: none !important;
+}
+#switch button.preferences {
+    display: none !important;
+}
+#switch button:first-of-type {
+    display: none !important;
+}
+#switch button.preferences {
+    display: none !important;
+}
+
+.addressfield {
+    display: none !important;
+}
+
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+    display: none !important;
+}
+
+.toolbar .button-toolbar {
+    min-width: 14px !important;
+    height: 14px !important;
+}
+
+.toolbar-addressbar .button-toolbar.browserAction-button img, .toolbar-mailbar .button-toolbar.browserAction-button img {
+    width: 14px !important;
+}
+
+.button-badge {
+    height: 7px !important;
+    min-width: 7px !important;
+}
+
+.button-toolbar.home { display: none !important;}
+.button-toolbar.back { display: none !important;}
+.button-toolbar.reload { display: none !important;}
+.button-toolbar.forward { display: none !important;}
+
+#switch {
+  display: unset !important;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>km.applescript</string>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>copy</string>
+			</array>
+			<key>Title</key>
+			<string>skimdtpo</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.keyboardmaestro.com/main/</string>
+			<key>Name</key>
+			<string>Keyboard Maestro</string>
+		</dict>
+		<dict>
+			<key>Link</key>
+			<string>http://skim-app.sourceforge.net/</string>
+			<key>Name</key>
+			<string>Skim</string>
+		</dict>
+		<dict>
+			<key>Link</key>
+			<string>http://www.devontechnologies.com/redirect.php?id=product-dt</string>
+			<key>Name</key>
+			<string>DEVONthink Pro</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Emrah Er</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Higlight, take note and save to DTPO</string>
+	<key>Extension Identifier</key>
+	<string>com.eremrah.popclip.extension.skimdtpo</string>
+	<key>Extension Image File</key>
+	<string>hlite.png</string>
+	<key>Extension Name</key>
+	<string>skimdtpo</string>
+</dict>
+</plist>

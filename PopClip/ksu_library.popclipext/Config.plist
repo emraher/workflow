@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>ksu.png</string>
+			<key>Title</key>
+			<string>ksu_library</string>
+			<key>URL</key>
+			<string>http://searchit.lib.ksu.edu/primo_library/libweb/action/search.do?fn=search&amp;ct=search&amp;fn=search&amp;ct=search&amp;initialSearch=true&amp;mode=Basic&amp;tab=default_tab&amp;indx=1&amp;dum=true&amp;srt=rank&amp;vid=KSUD&amp;frbg=&amp;tb=t&amp;vl(freeText0)={popclip text}&amp;scp.scps=scope%3A%2801KSU_ALMA%29%2Cscope%3A%2801KSU%29%2Cscope%3A%2801KSU_DSPACE%29%2Cprimo_central_multiple_fe&amp;vl%28391493158UI1%29=all_items&amp;vl%281UIStartWith0%29=contains&amp;vl%28312793377UI0%29=any&amp;vl%28312793377UI0%29=title&amp;vl%28312793377UI0%29=any&amp;Submit=Apply+Search+Limits</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>ksu_library</string>
+	<key>Extension Identifier</key>
+	<string>com.eremrah.popclip.extension.ksu_library</string>
+	<key>Extension Name</key>
+	<string>ksu_library</string>
+</dict>
+</plist>

@@ -1,0 +1,1 @@
+**appInfoInTitle:** See [MacHints](http://hints.macworld.com/article.php?story=20070105053507738).

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>rseek.png</string>
+			<key>Title</key>
+			<string>rseek</string>
+			<key>URL</key>
+			<string>http://www.rseek.org/?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>rseek</string>
+	<key>Extension Identifier</key>
+	<string>com.eremrah.popclip.extension.rseek</string>
+	<key>Extension Name</key>
+	<string>rseek</string>
+</dict>
+</plist>

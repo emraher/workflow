@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>459267954.64927697</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>DisplayKind</key>
+						<string>Variable</string>
+						<key>IncludeStdErr</key>
+						<true/>
+						<key>MacroActionType</key>
+						<string>ExecuteJavaScriptForAutomation</string>
+						<key>Path</key>
+						<string></string>
+						<key>Text</key>
+						<string>// JAVASCRIPT Version for CocoaTech PATH FINDER
+
+// for each selected item returns a triple of:
+// - full path
+// - folder path
+// - file name (or "" if the selection is a folder)   
+
+function run() {
+
+    var pfSeln = Application("Path Finder").selection();
+
+    return pfSeln ? pfSeln.map(pathFolderFile) : [];
+
+}
+
+function pathFolderFile(x) {
+    var strPath = x.posixPath(),
+        lstParts = strPath.split(/\//),
+        blnFolder = x.kind() === 'Folder',
+        strFile = blnFolder ? '' : lstParts.pop();
+
+    return [strPath];
+}</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+						<key>Variable</key>
+						<string>FolderPath</string>
+					</dict>
+					<dict>
+						<key>DisplayKind</key>
+						<string>Window</string>
+						<key>IncludeStdErr</key>
+						<true/>
+						<key>MacroActionType</key>
+						<string>ExecuteShellScript</string>
+						<key>Path</key>
+						<string></string>
+						<key>Text</key>
+						<string>open -a Sublime\ Text "$KMVAR_FolderPath"</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>526638807.81895</real>
+				<key>ModificationDate</key>
+				<real>526640207.89536399</real>
+				<key>Name</key>
+				<string>Open in ST</string>
+				<key>Triggers</key>
+				<array>
+					<dict>
+						<key>FireType</key>
+						<string>Pressed</string>
+						<key>KeyCode</key>
+						<integer>1</integer>
+						<key>MacroTriggerType</key>
+						<string>HotKey</string>
+						<key>Modifiers</key>
+						<integer>768</integer>
+					</dict>
+				</array>
+				<key>UID</key>
+				<string>7B8A17EC-D63D-4D5D-A39D-ADC58F423BAB</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Path Finder</string>
+		<key>Targeting</key>
+		<dict>
+			<key>Targeting</key>
+			<string>Included</string>
+			<key>TargetingApps</key>
+			<array>
+				<dict>
+					<key>BundleIdentifier</key>
+					<string>com.cocoatech.PathFinder</string>
+					<key>Name</key>
+					<string>Path Finder</string>
+					<key>NewFile</key>
+					<string>/Applications/Path Finder.app</string>
+				</dict>
+			</array>
+		</dict>
+		<key>ToggleMacroUID</key>
+		<string>0C2A6157-DDA1-4C83-BB1B-B2016B927DCC</string>
+		<key>UID</key>
+		<string>2D2680B7-F6C2-400E-9850-1E54DD0B5CB5</string>
+	</dict>
+</array>
+</plist>
