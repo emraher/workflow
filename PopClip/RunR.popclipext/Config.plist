@@ -5,19 +5,21 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>AppleScript File</key>
+			<string>RunR.applescript</string>
 			<key>Image File</key>
-			<string>scihub.png</string>
+			<string>RunR.png</string>
 			<key>Title</key>
-			<string>scihub</string>
-			<key>URL</key>
-			<string>https://sci-hub.tw/{popclip text}</string>
+			<string>Run R Command in RStudio</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>scihub</string>
+	<string>Run the selected text as a R command in RStudio.</string>
 	<key>Extension Identifier</key>
-	<string>com.eremrah.popclip.extension.scihub</string>
+	<string>com.emraher.popclip.extension.rrc</string>
+	<key>Extension Image File</key>
+	<string>RunR.png</string>
 	<key>Extension Name</key>
-	<string>scihub</string>
+	<string>RStudio</string>
 </dict>
 </plist>
