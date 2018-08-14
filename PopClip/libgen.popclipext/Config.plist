@@ -10,7 +10,7 @@
 			<key>Title</key>
 			<string>libgen</string>
 			<key>URL</key>
-			<string>http://gen.lib.rus.ec/search.php?req={popclip text}&amp;lg_topic=libgen&amp;open=0&amp;view=simple&amp;phrase=1&amp;column=def</string>
+			<string>http://libgen.io/search.php?req={popclip text}&amp;lg_topic=libgen&amp;open=0&amp;view=simple&amp;phrase=1&amp;column=def</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>

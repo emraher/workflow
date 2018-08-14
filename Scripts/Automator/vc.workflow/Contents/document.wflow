@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>419</string>
+	<string>444.7</string>
 	<key>AMApplicationVersion</key>
-	<string>2.6</string>
+	<string>2.8</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -51,55 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>-- Derived from http://bigdogmoe.com/blog/applescript-initialize-new-git-repository-finder
--- Altered according to my need
--- Copy to $HOME/Library/Services
-
-on run {input, parameters}
-	------------------------------------------------------------------------------------------------	
-	set the_path to (the POSIX path of input)
-	set AppleScript's text item delimiters to "/"
-	
-	if the_path does not end with "/" then
-		set parenPath to the_path &amp; "/"
-		copy parenPath to the_path
-	end if
-	
-	-- the variable the_path now contains the current working directory with trailing slash
-	set the clipboard to the_path as text
-	set fileTarget to the_path &amp; ".git" as text
-	------------------------------------------------------------------------------------------------
-	set vcPath to "/Volumes/Dropbox/Dropbox/gitRepos/vc/" --------------------------------- CHANGE THIS LINE
-	------------------------------------------------------------------------------------------------
-	if FileExists(fileTarget) then
-		--------------------------- There's a git repo. Do nothing. Display notifications.
-		display notification "There is already Git repository here. The path has been copied to the clipboard" with title "vc"
-	else
-		--------------------------- There's no git repo. So create one and copy files into it.	Display notifications.
-		set cmd to "cd " &amp; quoted form of the_path &amp; " &amp;&amp; git init" &amp; " &amp;&amp; touch README.md" &amp; " &amp;&amp; git add --all" &amp; " &amp;&amp; git commit -am 'Initial Commit'"
-		do shell script cmd
-		
-		set cmd to "cp " &amp; vcPath &amp; "vc " &amp; quoted form of the_path
-		do shell script cmd
-		
-		set cmd to "cp " &amp; vcPath &amp; "vc-git.awk " &amp; quoted form of the_path
-		do shell script cmd
-		
-		display notification "A Git repository and a README file have been created, vc files have been copied, and an initial commit has been made." with title "vc"
-		
-	end if
-	
-end run
-
-on FileExists(theFile) -- (String) as Boolean
-	tell application "System Events"
-		if exists folder theFile then
-			return true
-		else
-			return false
-		end if
-	end tell
-end FileExists</string>
+					<string>-- Derived from http://bigdogmoe.com/blog/applescript-initialize-new-git-repository-finder-- Altered according to my need-- Copy to $HOME/Library/Serviceson run {input, parameters}	------------------------------------------------------------------------------------------------		set the_path to (the POSIX path of input)	set AppleScript's text item delimiters to "/"		if the_path does not end with "/" then		set parenPath to the_path &amp; "/"		copy parenPath to the_path	end if		-- the variable the_path now contains the current working directory with trailing slash	set the clipboard to the_path as text	set fileTarget to the_path &amp; ".git" as text	------------------------------------------------------------------------------------------------	set vcPath to "/Volumes/Dropbox/Dropbox/gitRepos/SourcesOnGithub/workflow/Scripts/Automator/vc/" --------------------------------- CHANGE THIS LINE	------------------------------------------------------------------------------------------------	if FileExists(fileTarget) then		--------------------------- There's a git repo. Do nothing. Display notifications.		display notification "There is already Git repository here. The path has been copied to the clipboard" with title "vc"	else		--------------------------- There's no git repo. So create one and copy files into it.	Display notifications.		set cmd to "cd " &amp; quoted form of the_path &amp; " &amp;&amp; git init" &amp; " &amp;&amp; touch README.md" &amp; " &amp;&amp; git add --all" &amp; " &amp;&amp; git commit -am 'Initial Commit'"		do shell script cmd				set cmd to "cp " &amp; vcPath &amp; "vc " &amp; quoted form of the_path		do shell script cmd				set cmd to "cp " &amp; vcPath &amp; "vc-git.awk " &amp; quoted form of the_path		do shell script cmd				display notification "A Git repository and a README file have been created, vc files have been copied, and an initial commit has been made." with title "vc"			end if	end runon FileExists(theFile) -- (String) as Boolean	tell application "System Events"		if exists folder theFile then			return true		else			return false		end if	end tellend FileExists</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -153,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:316.000000</string>
+				<string>769.000000:771.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>

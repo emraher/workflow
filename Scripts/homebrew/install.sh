@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_URL=https://raw.githubusercontent.com/emraher/homebrew-notifier/master
+BASE_URL=https://raw.githubusercontent.com/emraher/workflow/master/Scripts/homebrew
 NOTIFIER_PATH=/usr/local/bin
 BREW_SCRIPT=$NOTIFIER_PATH/homebrew-notifier.sh
 CASK_SCRIPT=$NOTIFIER_PATH/cask-notifier.sh
